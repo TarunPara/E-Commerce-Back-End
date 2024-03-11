@@ -1,23 +1,52 @@
-// import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
-const sequelize = require('../config/connection');
+// Importing necessary parts of the sequelize library
+const { Model, DataTypes } = require("sequelize");
 
-// Initialize Product model (table) by extending off Sequelize's Model class
+// Importing the database connection
+const sequelize = require("../config/connection");
+
+// Defining the Product model by extending Sequelize's Model class
 class Product extends Model {}
 
-// set up fields and rules for Product model
-Product.init(
-  {
-    // define columns
+// Setting up fields and validation rules for the Product model
+Product.init({
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
   },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'product',
-  }
-);
+  product_name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  price: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false,
+    validate: {
+      isDecimal: true, // Validates that the value is a decimal
+    },
+  },
+  stock: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 10, // Sets a default value if none is provided
+    validate: {
+      isNumeric: true, // Validates that the value is numeric
+    },
+  },
+  category_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "category", // References the 'category' model
+      key: "id", // Specifically, the 'id' field of the 'category' model
+    },
+  },
+}, {
+  sequelize, // Database connection instance
+  timestamps: false, // Disables automatic timestamp fields
+  freezeTableName: true, // Prevents sequelize from renaming the table
+  underscored: true, // Uses underscores instead of camelCase for field names
+  modelName: "product", // Name of the model
+});
 
 module.exports = Product;
