@@ -29,3 +29,11 @@ cd E-Commerce-Back-End
 3. Install the required dependencies:
 
 npm install
+
+
+## Configuration
+
+Before running the application, configure your environment variables:
+
+1. Create a `.env` file in the project root.
+2. Add the following variables, replacing the placeholders with your MySQL details:
