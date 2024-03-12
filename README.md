@@ -19,3 +19,13 @@ In today's fast-paced digital world, having an efficient online presence is cruc
 To set up this project locally, follow these steps:
 
 1. Clone the repository to your local machine:
+
+git clone https://github.com/TarunPara/E-Commerce-Back-End.git
+
+2. Navigate to the project directory:
+
+cd E-Commerce-Back-End
+
+3. Install the required dependencies:
+
+npm install
