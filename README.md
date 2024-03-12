@@ -37,3 +37,15 @@ Before running the application, configure your environment variables:
 
 1. Create a `.env` file in the project root.
 2. Add the following variables, replacing the placeholders with your MySQL details:
+
+DB_NAME=ecommerce_db
+DB_USER=<your_mysql_username>
+DB_PW=<your_mysql_password>
+
+
+## Running the Application
+
+1. Initialize the database and seed it with sample data:
+
+npm run seed
+
