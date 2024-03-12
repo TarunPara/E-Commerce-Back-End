@@ -14,6 +14,8 @@ In today's fast-paced digital world, having an efficient online presence is cruc
 - **Database Integration**: Utilizes MySQL for reliable data storage and retrieval.
 - **RESTful API**: Provides a set of clear endpoints for interacting with the e-commerce data.
 
+## DEMO VIDEO
+
 ## Installation
 
 To set up this project locally, follow these steps:
@@ -49,3 +51,19 @@ DB_PW=<your_mysql_password>
 
 npm run seed
 
+2. Start the server:
+
+npm start
+
+
+## Using the API
+
+Once the server is running, you can use API clients like Postman or Insomnia to interact with the API. The API provides endpoints for managing products, categories, and tags.
+
+## Contributing
+
+Contributions to enhance this project are welcome! Feel free to fork the repository, make your changes, and submit a pull request.
+
+## License
+
+This project is released under the MIT License.
